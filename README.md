@@ -61,7 +61,7 @@ The usual process looks like this:
 
 ## 1. Search for the TV
 
-![scan](docs/scan.png)
+![scan](docs/scan-lan.png)
 
 In setup, start the search for TVs on your local network.
 
@@ -87,7 +87,7 @@ This code is only valid for a short time and is used to clearly confirm the conn
 
 ## 4. Enter the code on the watch
 
-![pairing](docs/pairing.png)
+![pairing](docs/pair.png)
 
 A **numeric keypad** appears on the watch.
 
