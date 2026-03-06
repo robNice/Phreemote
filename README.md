@@ -61,6 +61,8 @@ The usual process looks like this:
 
 ## 1. Search for the TV
 
+![scan](docs/scan.png)
+
 In setup, start the search for TVs on your local network.
 
 The app will try to:
@@ -84,6 +86,8 @@ During pairing, the TV usually shows a **multi-digit code**.
 This code is only valid for a short time and is used to clearly confirm the connection between the watch and the TV.
 
 ## 4. Enter the code on the watch
+
+![pairing](docs/pairing.png)]
 
 A **numeric keypad** appears on the watch.
 

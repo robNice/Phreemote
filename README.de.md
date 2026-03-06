@@ -61,6 +61,8 @@ Der typische Ablauf sieht so aus:
 
 ## 1. Fernseher suchen
 
+![scan](docs/scan.png)
+
 Im Setup startest du die Suche nach Fernsehern im lokalen Netzwerk.
 
 Die App versucht dabei:
@@ -84,6 +86,8 @@ Während der Kopplung zeigt der Fernseher in der Regel einen **mehrstelligen Cod
 Dieser Code ist nur kurzzeitig gültig und dient dazu, die Verbindung zwischen Uhr und TV eindeutig zu bestätigen.
 
 ## 4. Code auf der Uhr eingeben
+
+![pairing](docs/pairing.png)]
 
 Auf der Uhr erscheint ein **Ziffernfeld**.
 
