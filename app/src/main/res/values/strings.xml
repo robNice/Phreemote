@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Phreemote - Philips TV Control</string>
+
+    <string name="setup_title">Setup</string>
+    <string name="setup_status_ready">Ready</string>
+    <string name="setup_scan_lan">Scan LAN</string>
+    <string name="setup_discovering">Discovering (SSDP)…</string>
+    <string name="setup_found_ips">Found %1$d IPs, probing…</string>
+    <string name="setup_verified_tvs">Verified %1$d TV(s)</string>
+    <string name="setup_probing">Probing TVs…</string>
+    <string name="setup_error">Error</string>
+    <string name="setup_untrusted_title">Untrusted TV</string>
+    <string name="setup_trust">Trust</string>
+    <string name="setup_reject">Reject</string>
+    <string name="setup_tv_found_needs_trust">TV found – please trust</string>
+    <string name="setup_fingerprint">Fingerprint: %1$s</string>
+    <string name="setup_fingerprint_unknown">Fingerprint: unknown</string>
+    <string name="setup_trust_unavailable_emulator">Emulator: insecure trust (dev only)</string>
+    <string name="setup_found_tvs">Found TVs</string>
+    <string name="setup_connect">Connect</string>
+    <string name="setup_cancel">Cancel</string>
+    <string name="setup_scanning">Scanning…</string>
+    <string name="setup_remove_tv">Remove TV</string>
+    <string name="setup_remove_tv_confirm_title">Really removing this TV?</string>
+    <string name="setup_remove_tv_confirm_yes">Remove</string>
+    <string name="setup_remove_tv_confirm_no">Cancel</string>
+    <string name="setup_close">Back</string>
+    <string name="setup_ok">OK</string>
+
+    <string name="tv_trusted_check">%1$s</string>
+    <string name="tv_selected_prefix">✓ %1$s</string>
+    <string name="tv_name_with_ip">%1$s (%2$s)</string>
+    <string name="tv_unknown_api">?</string>
+    <string name="tv_base_default">/system</string>
+    <string name="tv_api">API: %1$s</string>
+    <string name="tv_base">Base: %1$s</string>
+
+    <string name="pairing_title">Pairing</string>
+    <string name="pairing_start">Start pairing</string>
+    <string name="pairing_enter_pin">Enter PIN</string>
+    <string name="pairing_submit">Submit</string>
+    <string name="pairing_clear">Clear</string>
+    <string name="pairing_backspace">⌫</string>
+    <string name="pairing_wait_tv">Check your TV for the PIN prompt.</string>
+    <string name="pairing_error">Pairing error: %1$s</string>
+
+</resources>
