@@ -3,9 +3,9 @@
 Phreemote verwandelt deine **Galaxy Watch** in eine kompakte Fernbedienung für deinen Fernseher.
 
 
-![mainscreen](/docs/main-screen.png)
-![numpad][docs/numpad-screen.png]
-![more][docs/more-screen.png]
+![mainscreen](docs/main-screen.png)
+![numpad](docs/numpad-screen.png)
+![more](docs/more-screen.png)
 
 
 
