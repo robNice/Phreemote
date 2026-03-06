@@ -1,4 +1,4 @@
-name: Build APK (live) on v* tag
+name: Build APK (main) on v* tag
 
 on:
   push:
@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout master branch
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: master
+          ref: main
           fetch-depth: 0
 
       - name: Set up JDK 17
