@@ -25,6 +25,7 @@ The most important step during first-time use is the **pairing** process between
 - [If pairing does not work](#if-pairing-does-not-work)
 - [Quick summary](#quick-summary)
   - [First use](#first-use)
+- [Lizenz](#license)
 
 ## What the app does
 
@@ -61,7 +62,7 @@ The usual process looks like this:
 
 ## 1. Search for the TV
 
-![scan](docs/scan.png)
+![scan](docs/scan-lan.png)
 
 In setup, start the search for TVs on your local network.
 
@@ -87,7 +88,7 @@ This code is only valid for a short time and is used to clearly confirm the conn
 
 ## 4. Enter the code on the watch
 
-![pairing](docs/pairing.png)]
+![pairing](docs/pair.png)
 
 A **numeric keypad** appears on the watch.
 
@@ -153,3 +154,9 @@ In such cases it often helps to:
 5. Enter the code on the watch  
 6. Confirm  
 7. Done
+
+
+--
+
+## License
+[`MIT`](./LICENSE)

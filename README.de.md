@@ -25,6 +25,7 @@ Der wichtigste Schritt bei der ersten Nutzung ist das **Pairing** zwischen Uhr u
 - [Wenn das Pairing nicht klappt](#wenn-das-pairing-nicht-klappt)
 - [Kurzfassung](#kurzfassung)
   - [Erste Nutzung](#erste-nutzung)
+- [Lizenz](#lizenz)
 
 ## Was die App macht
 
@@ -61,7 +62,7 @@ Der typische Ablauf sieht so aus:
 
 ## 1. Fernseher suchen
 
-![scan](docs/scan.png)
+![scan](docs/scan-lan.png)
 
 Im Setup startest du die Suche nach Fernsehern im lokalen Netzwerk.
 
@@ -87,7 +88,7 @@ Dieser Code ist nur kurzzeitig gültig und dient dazu, die Verbindung zwischen U
 
 ## 4. Code auf der Uhr eingeben
 
-![pairing](docs/pairing.png)]
+![pairing](docs/pair.png)
 
 Auf der Uhr erscheint ein **Ziffernfeld**.
 
@@ -153,3 +154,8 @@ In solchen Fällen hilft oft:
 5. Code auf der Uhr eingeben  
 6. Bestätigen  
 7. Fertig
+
+--
+
+## Lizenz
+[`MIT`](./LICENSE)
