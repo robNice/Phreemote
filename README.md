@@ -87,7 +87,7 @@ This code is only valid for a short time and is used to clearly confirm the conn
 
 ## 4. Enter the code on the watch
 
-![pairing](docs/pairing.png)]
+![pairing](docs/pairing.png)
 
 A **numeric keypad** appears on the watch.
 
