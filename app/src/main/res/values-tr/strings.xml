@@ -2,11 +2,11 @@
     <string name="app_name">Phreemote - Philips TV Kontrolü</string>
     <string name="setup_title">Kurulum</string>
     <string name="setup_status_ready">Hazır</string>
-    <string name="setup_scan_lan">LAN'ı tara</string>
+    <string name="setup_scan_lan">LAN\'ı tara</string>
     <string name="setup_discovering">Aranıyor (SSDP)…</string>
     <string name="setup_found_ips">%1$d IP bulundu, kontrol ediliyor…</string>
     <string name="setup_verified_tvs">%1$d TV doğrulandı</string>
-    <string name="setup_probing">TV'ler kontrol ediliyor…</string>
+    <string name="setup_probing">TV\'ler kontrol ediliyor…</string>
     <string name="setup_error">Hata</string>
     <string name="setup_untrusted_title">Güvenilmeyen TV</string>
     <string name="setup_trust">Güven</string>
@@ -15,11 +15,11 @@
     <string name="setup_fingerprint">Parmak izi: %1$s</string>
     <string name="setup_fingerprint_unknown">Parmak izi: bilinmiyor</string>
     <string name="setup_trust_unavailable_emulator">Emülatör: güvensiz güven modu (yalnızca geliştirme)</string>
-    <string name="setup_found_tvs">Bulunan TV'ler</string>
+    <string name="setup_found_tvs">Bulunan TV\'ler</string>
     <string name="setup_connect">Bağlan</string>
     <string name="setup_cancel">İptal</string>
     <string name="setup_scanning">Taranıyor…</string>
-    <string name="setup_remove_tv">TV'yi kaldır</string>
+    <string name="setup_remove_tv">TV\'yi kaldır</string>
     <string name="setup_remove_tv_confirm_title">Bu TV gerçekten kaldırılsın mı?</string>
     <string name="setup_remove_tv_confirm_yes">Kaldır</string>
     <string name="setup_remove_tv_confirm_no">İptal</string>
@@ -38,6 +38,6 @@
     <string name="pairing_submit">Gönder</string>
     <string name="pairing_clear">Temizle</string>
     <string name="pairing_backspace">⌫</string>
-    <string name="pairing_wait_tv">PIN istemi için TV'nizi kontrol edin.</string>
+    <string name="pairing_wait_tv">PIN istemi için TV\'nizi kontrol edin.</string>
     <string name="pairing_error">Eşleştirme hatası: %1$s</string>
 </resources>

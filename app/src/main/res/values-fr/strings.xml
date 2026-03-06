@@ -33,11 +33,11 @@
     <string name="tv_api">API : %1$s</string>
     <string name="tv_base">Base : %1$s</string>
     <string name="pairing_title">Appairage</string>
-    <string name="pairing_start">Démarrer l'appairage</string>
+    <string name="pairing_start">Démarrer l\'appairage</string>
     <string name="pairing_enter_pin">Saisir le PIN</string>
     <string name="pairing_submit">Valider</string>
     <string name="pairing_clear">Effacer</string>
     <string name="pairing_backspace">⌫</string>
-    <string name="pairing_wait_tv">Vérifiez votre TV pour l'invite du PIN.</string>
-    <string name="pairing_error">Erreur d'appairage : %1$s</string>
+    <string name="pairing_wait_tv">Vérifiez votre TV pour l\'invite du PIN.</string>
+    <string name="pairing_error">Erreur d\'appairage : %1$s</string>
 </resources>

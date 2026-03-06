@@ -4,9 +4,9 @@
     <string name="setup_status_ready">Gereed</string>
     <string name="setup_scan_lan">LAN scannen</string>
     <string name="setup_discovering">Zoeken (SSDP)…</string>
-    <string name="setup_found_ips">%1$d IP's gevonden, controleren…</string>
-    <string name="setup_verified_tvs">%1$d tv('s) geverifieerd</string>
-    <string name="setup_probing">Tv's controleren…</string>
+    <string name="setup_found_ips">%1$d IP\'s gevonden, controleren…</string>
+    <string name="setup_verified_tvs">%1$d tv(\'s) geverifieerd</string>
+    <string name="setup_probing">Tv\'s controleren…</string>
     <string name="setup_error">Fout</string>
     <string name="setup_untrusted_title">Niet-vertrouwde tv</string>
     <string name="setup_trust">Vertrouwen</string>
@@ -15,7 +15,7 @@
     <string name="setup_fingerprint">Vingerafdruk: %1$s</string>
     <string name="setup_fingerprint_unknown">Vingerafdruk: onbekend</string>
     <string name="setup_trust_unavailable_emulator">Emulator: onveilige vertrouwensmodus (alleen ontwikkeling)</string>
-    <string name="setup_found_tvs">Gevonden tv's</string>
+    <string name="setup_found_tvs">Gevonden tv\'s</string>
     <string name="setup_connect">Verbinden</string>
     <string name="setup_cancel">Annuleren</string>
     <string name="setup_scanning">Scannen…</string>
