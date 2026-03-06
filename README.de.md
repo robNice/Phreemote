@@ -2,14 +2,11 @@
 
 Phreemote verwandelt deine **Galaxy Watch** in eine kompakte Fernbedienung für deinen Fernseher.
 
-
 ![mainscreen](docs/main-screen.png)
 ![numpad](docs/numpad-screen.png)
 ![more](docs/more-screen.png)
 
-
-
-Die App funktioniert **nur mit Fernsehern, die eine JointSpace-API bereitstellen**. Getestet werden konnte bislang **nur API-Version 6**. Wenn du einen Fernseher mit einer **anderen JointSpace-API-Version** verwendest, freuen wir uns über **Erfahrungsberichte und Beiträge aus der Community**, damit die Kompatibilität besser eingeschätzt und weiter verbessert werden kann.
+Die App funktioniert **nur mit Fernsehern, die eine JointSpace-API bereitstellen**. Getestet werden konnte bislang **nur API-Version 6**. Wenn du einen Fernseher mit einer **anderen JointSpace-API-Version** verwendest, freue ich mich über **Erfahrungsberichte und Beiträge aus der Community**, damit die Kompatibilität besser eingeschätzt und weiter verbessert werden kann.
 
 Der wichtigste Schritt bei der ersten Nutzung ist das **Pairing** zwischen Uhr und Fernseher. Dieses README richtet sich in erster Linie an **Anwender** und erklärt vor allem genau diesen Vorgang.
 
