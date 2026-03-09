@@ -15,8 +15,8 @@ android {
         applicationId = "de.robnice.philipstvcontrol"
         minSdk = 30
         targetSdk = 36
-        versionCode = 34
-        versionName = "1.0.1"
+        versionCode = 35
+        versionName = "1.0.2"
 
     }
 
@@ -68,7 +68,6 @@ dependencies {
     implementation(libs.datastore.preferences)
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.okhttp)
-    implementation(libs.play.services.wearable)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
     implementation(libs.ui.graphics)
