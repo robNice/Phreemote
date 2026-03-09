@@ -1,1 +1,1 @@
-Initial Build
+Initial F-Droid release.
