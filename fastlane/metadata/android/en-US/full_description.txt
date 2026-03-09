@@ -1,0 +1,14 @@
+Phreemote is an Android app for controlling compatible Philips TVs over the local network.
+
+It uses the JointSpace API and provides a simple remote control interface for common TV actions such as navigation, confirmation, back, volume, channel control, and digit input.
+
+Features:
+- discover compatible TVs on the local network
+- pair with supported Philips TVs
+- send remote control commands
+- simple interface focused on fast access
+- direct connection without external cloud services
+
+Testing has focused on JointSpace API version 6. Compatibility with other versions may vary depending on TV model and software version.
+
+The app stores connection-related settings locally on the device in order to reconnect to the selected TV.
