@@ -53,7 +53,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    useLibrary("wear-sdk")
     buildFeatures {
         compose = true
     }
@@ -77,7 +76,6 @@ dependencies {
     implementation(libs.compose.ui.tooling)
     implementation(libs.wear.tooling.preview)
     implementation(libs.activity.compose)
-    implementation(libs.core.splashscreen)
     implementation(libs.androidx.ui)
     implementation(libs.androidx.material3)
     androidTestImplementation(platform(libs.compose.bom))
