@@ -41,21 +41,36 @@ import androidx.core.graphics.createBitmap
 @Composable
 fun RemoteScreen(
     onOpenSettings: () -> Unit,
-    onRemoteAction: (RemoteAction) -> Unit
+    onRemoteAction: (RemoteAction) -> Unit,
+    tvOnline: Boolean? = null
 ) {
     val pagerState = rememberPagerState(
         initialPage = 1,
         pageCount = { 3 }
     )
 
-    HorizontalPager(
-        state = pagerState,
-        modifier = Modifier.fillMaxSize()
-    ) { page ->
-        when (page) {
-            0 -> ExtraFunctionsView(onRemoteAction)
-            1 -> MainRemoteView(onOpenSettings, onRemoteAction)
-            2 -> NumpadView(onRemoteAction)
+    Box(modifier = Modifier.fillMaxSize()) {
+        HorizontalPager(
+            state = pagerState,
+            modifier = Modifier.fillMaxSize()
+        ) { page ->
+            when (page) {
+                0 -> ExtraFunctionsView(onRemoteAction)
+                1 -> MainRemoteView(onOpenSettings, onRemoteAction)
+                2 -> NumpadView(onRemoteAction)
+            }
+        }
+
+        if (tvOnline == false) {
+            Icon(
+                imageVector = Icons.Rounded.WifiOff,
+                contentDescription = null,
+                tint = Color(0xFFFF6B6B),
+                modifier = Modifier
+                    .align(Alignment.TopCenter)
+                    .padding(top = 6.dp)
+                    .size(14.dp)
+            )
         }
     }
 }
