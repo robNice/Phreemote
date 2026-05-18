@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Phreemote - Пульт для Philips TV</string>
+
+    <string name="setup_title">Налаштування</string>
+    <string name="setup_status_ready">Готово</string>
+    <string name="setup_scan_lan">Сканувати мережу</string>
+    <string name="setup_discovering">Пошук (SSDP)…</string>
+    <string name="setup_found_ips">Знайдено %1$d IP, перевірка…</string>
+    <string name="setup_verified_tvs">Підтверджено %1$d TV</string>
+    <string name="setup_probing">Перевірка TV…</string>
+    <string name="setup_error">Помилка</string>
+    <string name="setup_untrusted_title">Невідомий TV</string>
+    <string name="setup_trust">Довіряти</string>
+    <string name="setup_reject">Відхилити</string>
+    <string name="setup_tv_found_needs_trust">TV знайдено – підтвердіть довіру</string>
+    <string name="setup_fingerprint">Відбиток: %1$s</string>
+    <string name="setup_fingerprint_unknown">Відбиток: невідомо</string>
+    <string name="setup_trust_unavailable_emulator">Емулятор: небезпечна довіра (тільки для розробки)</string>
+    <string name="setup_found_tvs">Знайдені TV</string>
+    <string name="setup_connect">Підключити</string>
+    <string name="setup_cancel">Скасувати</string>
+    <string name="setup_scanning">Сканування…</string>
+    <string name="setup_remove_tv">Видалити TV</string>
+    <string name="setup_remove_tv_confirm_title">Справді видалити цей TV?</string>
+    <string name="setup_remove_tv_confirm_yes">Видалити</string>
+    <string name="setup_remove_tv_confirm_no">Скасувати</string>
+    <string name="setup_close">Назад</string>
+    <string name="setup_ok">OK</string>
+
+    <string name="tv_trusted_check">%1$s</string>
+    <string name="tv_selected_prefix">✓ %1$s</string>
+    <string name="tv_name_with_ip">%1$s (%2$s)</string>
+    <string name="tv_unknown_api">?</string>
+    <string name="tv_base_default">/system</string>
+    <string name="tv_api">API: %1$s</string>
+    <string name="tv_base">База: %1$s</string>
+
+    <string name="pairing_title">Сполучення</string>
+    <string name="pairing_start">Розпочати сполучення</string>
+    <string name="pairing_enter_pin">Введіть PIN</string>
+    <string name="pairing_submit">Підтвердити</string>
+    <string name="pairing_clear">Очистити</string>
+    <string name="pairing_backspace">⌫</string>
+    <string name="pairing_wait_tv">Перевірте запит PIN на екрані TV.</string>
+    <string name="pairing_error">Помилка сполучення: %1$s</string>
+
+</resources>

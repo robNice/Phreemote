@@ -33,18 +33,20 @@ jobs:
         run: |
           echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
 
-      - name: Build Release APK
+      - name: Build Release APK and AAB
         env:
           ANDROID_KEYSTORE_PATH: ${{ github.workspace }}/keystore.jks
           ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
-        run: ./gradlew :app:assembleRelease
+        run: ./gradlew :app:assembleRelease :app:bundleRelease
 
-      - name: Rename APK to include tag
+      - name: Rename APK and AAB to include tag
         run: |
           APK="$(ls app/build/outputs/apk/release/*.apk | head -n 1)"
           mv "$APK" "Phreemote-${{ github.ref_name }}.apk"
+          AAB="$(ls app/build/outputs/bundle/release/*.aab | head -n 1)"
+          mv "$AAB" "Phreemote-${{ github.ref_name }}.aab"
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
@@ -53,10 +55,19 @@ jobs:
           path: Phreemote-${{ github.ref_name }}.apk
           if-no-files-found: error
 
-      - name: Publish APK to GitHub Release
+      - name: Upload AAB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: aab-${{ github.ref_name }}
+          path: Phreemote-${{ github.ref_name }}.aab
+          if-no-files-found: error
+
+      - name: Publish APK and AAB to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           name: ${{ github.ref_name }}
           generate_release_notes: true
-          files: Phreemote-${{ github.ref_name }}.apk
+          files: |
+            Phreemote-${{ github.ref_name }}.apk
+            Phreemote-${{ github.ref_name }}.aab
