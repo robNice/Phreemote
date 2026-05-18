@@ -47,6 +47,7 @@ fun WearApp() {
         val selectedIp by vm.selectedIp.collectAsState()
         val selectedPaired by vm.selectedPaired.collectAsState()
         val showSetup by vm.showSetup.collectAsState()
+        val tvOnline by vm.tvOnline.collectAsState()
 
         if (!bootstrapped) {
             ScreenScaffold(scrollState = rememberTransformingLazyColumnState()) { padding ->
@@ -98,7 +99,8 @@ fun WearApp() {
             else -> {
                 RemoteScreen(
                     onOpenSettings = { vm.openSetup() },
-                    onRemoteAction = { action -> vm.onRemoteAction(action) }
+                    onRemoteAction = { action -> vm.onRemoteAction(action) },
+                    tvOnline = tvOnline
                 )
             }
         }

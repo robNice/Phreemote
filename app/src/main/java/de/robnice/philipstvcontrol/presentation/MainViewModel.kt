@@ -27,7 +27,7 @@ import de.robnice.philipstvcontrol.data.tv.PhilipsRemoteService
 
 class MainViewModel(app: Application) : AndroidViewModel(app) {
 
-    private val discovery = SsdpDiscovery()
+    private val discovery = SsdpDiscovery(app.applicationContext)
     private val okHttpFactory = OkHttpFactory()
     private val probe = TvSystemProbe(okHttpFactory)
     private val remoteService = PhilipsRemoteService(okHttpFactory)
@@ -61,6 +61,9 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     private val _bootstrapped = MutableStateFlow(false)
     val bootstrapped: StateFlow<Boolean> = _bootstrapped
 
+    private val _tvOnline = MutableStateFlow<Boolean?>(null)
+    val tvOnline: StateFlow<Boolean?> = _tvOnline
+
     private val _selectedDigestUser = MutableStateFlow<String?>(null)
     val selectedDigestUser: StateFlow<String?> = _selectedDigestUser
 
@@ -86,6 +89,12 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             _selectedDigestUser.value = selectionStore.getSelectedDigestUser()
             _selectedDigestPass.value = selectionStore.getSelectedDigestPass()
             _bootstrapped.value = true
+
+            val ip = _selectedIp.value
+            val pin = ip?.let { trustStore.getPin(it) }
+            if (ip != null && !pin.isNullOrBlank() && _selectedPaired.value) {
+                _tvOnline.value = probe.probeTrusted(ip, pin) is ProbeResult.Verified
+            }
         }
     }
 
@@ -106,11 +115,16 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
                 val found = withContext(Dispatchers.IO) {
                     val results = mutableListOf<FoundTv>()
+                    val ipsToProbe = LinkedHashSet<String>()
 
                     for (resp in ssdp) {
-                        if (!isActive) break
+                        ipsToProbe += resp.remoteIp
+                    }
 
-                        val ip = resp.remoteIp
+                    _selectedIp.value?.let { ipsToProbe += it }
+
+                    for (ip in ipsToProbe) {
+                        if (!isActive) break
                         val pin = trustStore.getPin(ip)
                         val trusted = !pin.isNullOrBlank()
 
@@ -194,6 +208,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                 _selectedIp.value = tv.ip
                 _selectedBasePath.value = tv.basePath
                 _selectedPaired.value = false
+                _tvOnline.value = null
                 selectionStore.setSelectedTv(tv.ip, tv.basePath, false)
                 _showSetup.value = false
                 return@launch
@@ -213,6 +228,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             _selectedIp.value = tv.ip
             _selectedBasePath.value = tv.basePath
             _selectedPaired.value = false
+            _tvOnline.value = null
             selectionStore.setSelectedTv(tv.ip, tv.basePath, false)
             _showSetup.value = false
 
@@ -245,10 +261,16 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     fun forgetTvCompletely() {
         viewModelScope.launch {
+            val ip = _selectedIp.value
             selectionStore.forgetSelectedTvCompletely()
+            if (ip != null) withContext(Dispatchers.IO) { trustStore.clearPin(ip) }
             _foundTvs.value = emptyList()
             _selectedIp.value = null
+            _selectedBasePath.value = null
             _selectedPaired.value = false
+            _selectedDigestUser.value = null
+            _selectedDigestPass.value = null
+            _tvOnline.value = null
         }
     }
 
@@ -341,11 +363,13 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                 remoteMutex.lock()
                 try {
                     val success = remoteService.sendKey(ip, pin, basePath, digestUser, digestPass, philipsKey)
+                    _tvOnline.value = success
                     Log.d("TV", "Remote action ... success=$success")
                 } finally {
                     remoteMutex.unlock()
                 }
             } catch (e: Exception) {
+                _tvOnline.value = false
                 Log.e("TV", "Remote action failed: $action", e)
             }
         }
