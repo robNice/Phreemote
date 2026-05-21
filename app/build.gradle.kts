@@ -8,11 +8,11 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "de.robnice.philipstvcontrol.phone"
+        applicationId = "de.robnice.philipstvcontrol"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1010002000
-        versionName = "1.2.0-mobile"
+        versionCode = 1010002001
+        versionName = "1.2.1-mobile"
     }
 
     val ksPath = System.getenv("ANDROID_KEYSTORE_PATH")
