@@ -1,8 +1,0 @@
-de.robnice.philipstvcontrol.shared-pngs-0 C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\shared\build\generated\res\pngs\debug
-de.robnice.philipstvcontrol.shared-updated_navigation_xml-1 C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\shared\build\generated\updated_navigation_xml\debug
-de.robnice.philipstvcontrol.shared-mergeDebugResources-2 C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\shared\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
-de.robnice.philipstvcontrol.shared-mergeDebugResources-3 C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\shared\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
-de.robnice.philipstvcontrol.shared-debug-4 C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\shared\build\intermediates\merged_res\debug\mergeDebugResources
-de.robnice.philipstvcontrol.shared-debug-5 C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\shared\build\intermediates\packaged_res\debug\packageDebugResources
-de.robnice.philipstvcontrol.shared-debug-6 C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\shared\src\debug\res
-de.robnice.philipstvcontrol.shared-main-7 C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\shared\src\main\res
