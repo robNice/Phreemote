@@ -1,0 +1,15 @@
+package de.robnice.philipstvcontrol.domain.model
+
+enum class RemoteAction {
+    VOLUME_UP, VOLUME_DOWN,
+    CURSOR_UP, CURSOR_DOWN, CURSOR_LEFT, CURSOR_RIGHT,
+    TV, HOME, STANDBY, OPTIONS, SOURCE, INFO,
+    OK, BACK,
+    PLAY_PAUSE, PAUSE, STOP,
+    DIGIT_0, DIGIT_1, DIGIT_2, DIGIT_3, DIGIT_4,
+    DIGIT_5, DIGIT_6, DIGIT_7, DIGIT_8, DIGIT_9,
+    RED, GREEN, YELLOW, BLUE
+
+
+
+}

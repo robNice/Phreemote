@@ -4,20 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "de.robnice.philipstvcontrol"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    namespace = "de.robnice.philipstvcontrol.mobile"
+    compileSdk = 36
 
     defaultConfig {
-        applicationId = "de.robnice.philipstvcontrol"
-        minSdk = 30
+        applicationId = "de.robnice.philipstvcontrol.phone"
+        minSdk = 26
         targetSdk = 36
-        versionCode = 10000003
-        versionName = "1.0.3"
-
+        versionCode = 10001000
+        versionName = "1.1.0-mobile"
     }
 
     val ksPath = System.getenv("ANDROID_KEYSTORE_PATH")
@@ -32,6 +27,7 @@ android {
             }
         }
     }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -39,47 +35,33 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-
             if (ksPath != null) {
                 signingConfig = signingConfigs.getByName("release")
             }
-
-            ndk {
-                debugSymbolLevel = "SYMBOL_TABLE"
-            }
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     buildFeatures {
         compose = true
     }
 }
 
 dependencies {
-    implementation(libs.core.splashscreen)
-    implementation(libs.androidx.material.icons.extended)
-    implementation(libs.material.icons.extended)
+    implementation(project(":shared"))
     implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.datastore.preferences)
     implementation(libs.lifecycle.viewmodel.compose)
-    implementation(libs.okhttp)
     implementation(platform(libs.compose.bom))
-    implementation(libs.ui)
+    implementation(libs.androidx.ui)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
-    implementation(libs.compose.material3)
-    implementation(libs.compose.foundation)
-    implementation(libs.compose.ui.tooling)
-    implementation(libs.wear.tooling.preview)
-    implementation(libs.activity.compose)
-    implementation(libs.androidx.ui)
     implementation(libs.androidx.material3)
-    androidTestImplementation(platform(libs.compose.bom))
-    androidTestImplementation(libs.ui.test.junit4)
+    implementation(libs.activity.compose)
+    implementation(libs.androidx.material.icons.extended)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 }
