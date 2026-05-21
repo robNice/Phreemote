@@ -41,6 +41,7 @@ fun SetupScreen(
     val listState = rememberTransformingLazyColumnState()
     val selectedPaired by vm.selectedPaired.collectAsState()
     var showForgetConfirm by remember { mutableStateOf(false) }
+    var showDemoConfirm by remember { mutableStateOf(false) }
     ScreenScaffold(scrollState = listState) { contentPadding ->
         TransformingLazyColumn(
             state = listState,
@@ -94,6 +95,48 @@ fun SetupScreen(
                     }
                 }
 
+            } else if (showDemoConfirm) {
+
+                item {
+                    Card(
+                        onClick = {},
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.secondaryContainer
+                        )
+                    ) {
+                        Text(
+                            text = stringResource(R.string.demo_mode),
+                            color = MaterialTheme.colorScheme.onSecondaryContainer,
+                            modifier = Modifier.padding(10.dp)
+                        )
+                        Text(
+                            text = stringResource(R.string.demo_mode_description),
+                            color = MaterialTheme.colorScheme.onSecondaryContainer,
+                            modifier = Modifier.padding(start = 10.dp, end = 10.dp, bottom = 10.dp),
+                            style = MaterialTheme.typography.labelSmall
+                        )
+                    }
+                }
+
+                item {
+                    Button(
+                        onClick = { vm.enterDemoMode() },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text(stringResource(R.string.demo_mode_start))
+                    }
+                }
+
+                item {
+                    Button(
+                        onClick = { showDemoConfirm = false },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text(stringResource(R.string.setup_cancel))
+                    }
+                }
+
             } else {
                 item {
                     val statusText = when (val s = status) {
@@ -103,7 +146,6 @@ fun SetupScreen(
                         SetupStatus.Probing -> stringResource(R.string.setup_probing)
                         is SetupStatus.Verified -> stringResource(R.string.setup_verified_tvs, s.count)
                         is SetupStatus.Error -> stringResource(R.string.setup_error)
-                        else -> stringResource(R.string.setup_status_ready)
                     }
 
                     Card(
@@ -237,6 +279,19 @@ fun SetupScreen(
 
                     }
                 }
+                item {
+                    Button(
+                        onClick = { showDemoConfirm = true },
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                            contentColor = MaterialTheme.colorScheme.onSecondaryContainer
+                        )
+                    ) {
+                        Text(stringResource(R.string.demo_mode))
+                    }
+                }
+
                 if (onClose != null) {
                     item {
                         Button(

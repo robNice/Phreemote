@@ -49,7 +49,16 @@ class SsdpDiscovery(private val context: Context) {
 
             coroutineScope {
                 effectiveAddrs
-                    .map { addr -> async { scanFrom(addr, target, mSearch, listenMs) } }
+                    .map { addr ->
+                        async {
+                            try {
+                                scanFrom(addr, target, mSearch, listenMs)
+                            } catch (e: Exception) {
+                                Log.w("SSDP", "scanFrom ${addr.hostAddress} failed: ${e.message}")
+                                emptyList<SsdpResponse>()
+                            }
+                        }
+                    }
                     .flatMap { it.await() }
                     .distinctBy { it.remoteIp }
             }

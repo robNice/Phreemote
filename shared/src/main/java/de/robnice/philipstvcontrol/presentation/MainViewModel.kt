@@ -16,10 +16,18 @@ import android.util.Log
 import de.robnice.philipstvcontrol.data.platform.Platform
 import de.robnice.philipstvcontrol.data.trust.DEV_TRUST_ALL
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
 import de.robnice.philipstvcontrol.domain.model.FoundTv
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.isActive
+import kotlinx.coroutines.sync.Semaphore
+import kotlinx.coroutines.sync.withPermit
+import java.net.Inet4Address
+import java.net.InetSocketAddress
+import java.net.NetworkInterface
+import java.net.Socket
 import de.robnice.philipstvcontrol.data.settings.TvSelectionStore
 import de.robnice.philipstvcontrol.data.tv.PhilipsPairingService
 import de.robnice.philipstvcontrol.domain.model.RemoteAction
@@ -81,6 +89,9 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     private val _showSetup = MutableStateFlow(false)
     val showSetup: StateFlow<Boolean> = _showSetup
 
+    private val _demoMode = MutableStateFlow(false)
+    val demoMode: StateFlow<Boolean> = _demoMode
+
     init {
         viewModelScope.launch(Dispatchers.IO) {
             _selectedIp.value = selectionStore.getSelectedIp()
@@ -108,8 +119,21 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             try {
                 _status.value = SetupStatus.Discovering
 
-                val ssdp = withContext(Dispatchers.IO) { discovery.discover() }
-                Log.d("TV", "SSDP found ${ssdp.size} candidates")
+                val (ssdp, subnetIps) = withContext(Dispatchers.IO) {
+                    coroutineScope {
+                        val ssdpJob = async {
+                            try { discovery.discover() }
+                            catch (e: Exception) {
+                                Log.w("TV", "SSDP failed: ${e.message}")
+                                emptyList<SsdpDiscovery.SsdpResponse>()
+                            }
+                        }
+                        val subnetJob = async { subnetScan() }
+                        ssdpJob.await() to subnetJob.await()
+                    }
+                }
+
+                Log.d("TV", "SSDP found ${ssdp.size}, subnet scan found ${subnetIps.size} candidates")
 
                 _status.value = SetupStatus.Probing
 
@@ -119,6 +143,9 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
                     for (resp in ssdp) {
                         ipsToProbe += resp.remoteIp
+                    }
+                    for (ip in subnetIps) {
+                        ipsToProbe += ip
                     }
 
                     _selectedIp.value?.let { ipsToProbe += it }
@@ -259,6 +286,15 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         _showSetup.value = false
     }
 
+    fun enterDemoMode() {
+        _demoMode.value = true
+        _showSetup.value = false
+    }
+
+    fun exitDemoMode() {
+        _demoMode.value = false
+    }
+
     fun forgetTvCompletely() {
         viewModelScope.launch {
             val ip = _selectedIp.value
@@ -332,6 +368,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun onRemoteAction(action: RemoteAction) {
+        if (_demoMode.value) return
         viewModelScope.launch(Dispatchers.IO) {
             val ip = _selectedIp.value
             val basePath = _selectedBasePath.value
@@ -372,6 +409,54 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                 _tvOnline.value = false
                 Log.e("TV", "Remote action failed: $action", e)
             }
+        }
+    }
+
+    private suspend fun subnetScan(): List<String> = withContext(Dispatchers.IO) {
+        val localIps = try {
+            NetworkInterface.getNetworkInterfaces()?.toList().orEmpty()
+                .filter { it.isUp && !it.isLoopback }
+                .flatMap { it.inetAddresses.toList() }
+                .filterIsInstance<Inet4Address>()
+                .filterNot { it.isLoopbackAddress }
+                .mapNotNull { it.hostAddress }
+        } catch (e: Exception) {
+            Log.w("TV", "subnetScan: getNetworkInterfaces failed: ${e.message}")
+            emptyList()
+        }
+
+        if (localIps.isEmpty()) return@withContext emptyList()
+
+        val subnets = localIps.mapNotNull { ip ->
+            val parts = ip.split(".")
+            if (parts.size == 4) "${parts[0]}.${parts[1]}.${parts[2]}." else null
+        }.toSet()
+
+        Log.d("TV", "subnetScan: subnets=$subnets")
+
+        val semaphore = Semaphore(30)
+        coroutineScope {
+            subnets.flatMap { subnet ->
+                (1..254).map { i ->
+                    async {
+                        semaphore.withPermit {
+                            val ip = "$subnet$i"
+                            if (isPortOpen(ip, 1926, 400)) ip else null
+                        }
+                    }
+                }
+            }.mapNotNull { it.await() }
+        }
+    }
+
+    private fun isPortOpen(ip: String, port: Int, timeoutMs: Int): Boolean {
+        return try {
+            Socket().use { socket ->
+                socket.connect(InetSocketAddress(ip, port), timeoutMs)
+                true
+            }
+        } catch (_: Exception) {
+            false
         }
     }
 

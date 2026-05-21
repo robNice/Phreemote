@@ -3,4 +3,5 @@
     <string name="app_name">Phreemote</string>
     <string name="privacy_footer">Gizlilik</string>
     <string name="privacy_title">Gizlilik politikası</string>
+    <string name="demo_mode_exited">Demo modu sona erdi</string>
 </resources>

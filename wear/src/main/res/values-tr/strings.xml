@@ -40,4 +40,5 @@
     <string name="pairing_backspace">⌫</string>
     <string name="pairing_wait_tv">PIN istemi için TV\'nizi kontrol edin.</string>
     <string name="pairing_error">Eşleştirme hatası: %1$s</string>
+    <string name="demo_mode_exited">Demo modu sona erdi</string>
 </resources>

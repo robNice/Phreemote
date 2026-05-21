@@ -11,8 +11,8 @@ android {
         applicationId = "de.robnice.philipstvcontrol.phone"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1010001000
-        versionName = "1.1.0-mobile"
+        versionCode = 1010002000
+        versionName = "1.2.0-mobile"
     }
 
     val ksPath = System.getenv("ANDROID_KEYSTORE_PATH")

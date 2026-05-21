@@ -2,5 +2,9 @@
 <resources>
     <string name="app_name">Phreemote</string>
     <string name="privacy_footer">Privacy</string>
+    <string name="demo_mode">Demo Mode</string>
+    <string name="demo_mode_description">Try the remote without pairing a TV. All buttons are visible but no commands are sent to any device.\n\nTap the Settings icon (⚙) in the remote to exit Demo Mode.</string>
+    <string name="demo_mode_start">Start Demo</string>
+    <string name="demo_mode_exited">Demo mode ended</string>
     <string name="privacy_title">Privacy Policy</string>
 </resources>

@@ -45,6 +45,12 @@
     <string name="pairing_error">Pairing error: %1$s</string>
 
     <string name="status_tv_offline">TV offline</string>
+
+    <string name="demo_mode">Demo Mode</string>
+    <string name="demo_mode_description">Try the remote without a real TV. No commands will be sent. Tap ⚙ in the remote to exit.</string>
+    <string name="demo_mode_start">Start Demo</string>
+    <string name="demo_mode_exited">Demo mode ended</string>
+
     <string name="btn_ok">OK</string>
     <string name="btn_cursor_up">Cursor up</string>
     <string name="btn_cursor_down">Cursor down</string>

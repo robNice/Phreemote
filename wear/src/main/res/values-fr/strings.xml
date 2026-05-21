@@ -40,4 +40,5 @@
     <string name="pairing_backspace">⌫</string>
     <string name="pairing_wait_tv">Vérifiez votre TV pour l\'invite du PIN.</string>
     <string name="pairing_error">Erreur d\'appairage : %1$s</string>
+    <string name="demo_mode_exited">Mode démo terminé</string>
 </resources>
