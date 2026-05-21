@@ -40,4 +40,5 @@
     <string name="pairing_backspace">⌫</string>
     <string name="pairing_wait_tv">Проверьте телевизор на наличие запроса PIN.</string>
     <string name="pairing_error">Ошибка сопряжения: %1$s</string>
+    <string name="demo_mode_exited">Демо-режим завершён</string>
 </resources>

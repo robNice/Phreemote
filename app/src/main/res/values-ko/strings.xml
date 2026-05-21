@@ -3,4 +3,5 @@
     <string name="app_name">Phreemote</string>
     <string name="privacy_footer">개인정보</string>
     <string name="privacy_title">개인정보 처리방침</string>
+    <string name="demo_mode_exited">데모 모드 종료됨</string>
 </resources>

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -28,6 +29,7 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.material3.ripple
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -296,13 +298,17 @@ fun ExtraFunctionsView(onRemoteAction: (RemoteAction) -> Unit) {
 @Composable
 fun ColorSmallButton(color: Color, contentDescription: String, onClick: () -> Unit) {
     val haptic = LocalHapticFeedback.current
+    val interactionSource = remember { MutableInteractionSource() }
     Box(
         modifier = Modifier
             .size(32.dp)
             .clip(CircleShape)
             .background(color.copy(alpha = 0.8f))
             .semantics { this.contentDescription = contentDescription }
-            .clickable {
+            .clickable(
+                interactionSource = interactionSource,
+                indication = ripple(color = Color.White)
+            ) {
                 haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                 onClick()
             }
@@ -320,12 +326,16 @@ fun WatchButton(
     onClick: () -> Unit
 ) {
     val haptic = LocalHapticFeedback.current
+    val interactionSource = remember { MutableInteractionSource() }
     Box(
         modifier = modifier
             .size(size)
             .clip(CircleShape)
             .background(color)
-            .clickable {
+            .clickable(
+                interactionSource = interactionSource,
+                indication = ripple(color = Color.White)
+            ) {
                 haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                 onClick()
             },
@@ -345,12 +355,16 @@ fun NumpadButton(
     onClick: () -> Unit
 ) {
     val haptic = LocalHapticFeedback.current
+    val interactionSource = remember { MutableInteractionSource() }
     Box(
         modifier = modifier
             .size(size)
             .clip(CircleShape)
             .background(containerColor)
-            .clickable {
+            .clickable(
+                interactionSource = interactionSource,
+                indication = ripple(color = Color.White)
+            ) {
                 haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                 onClick()
             },

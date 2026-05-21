@@ -43,5 +43,6 @@
     <string name="pairing_backspace">⌫</string>
     <string name="pairing_wait_tv">Перевірте запит PIN на екрані TV.</string>
     <string name="pairing_error">Помилка сполучення: %1$s</string>
+    <string name="demo_mode_exited">Демо-режим завершено</string>
 
 </resources>

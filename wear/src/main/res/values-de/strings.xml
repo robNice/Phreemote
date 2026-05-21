@@ -44,5 +44,6 @@
     <string name="pairing_wait_tv">Bitte am TV den PIN-Hinweis beachten.</string>
     <string name="pairing_error">Pairing-Fehler: %1$s</string>
 
+    <string name="demo_mode_exited">Demo-Modus beendet</string>
 
 </resources>

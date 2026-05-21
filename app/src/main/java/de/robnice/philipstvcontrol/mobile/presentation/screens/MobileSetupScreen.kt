@@ -52,6 +52,23 @@ fun MobileSetupScreen(
     val selectedIp by vm.selectedIp.collectAsState()
     val selectedPaired by vm.selectedPaired.collectAsState()
     var showForgetConfirm by remember { mutableStateOf(false) }
+    var showDemoConfirm by remember { mutableStateOf(false) }
+
+    if (showDemoConfirm) {
+        AlertDialog(
+            onDismissRequest = { showDemoConfirm = false },
+            title = { Text("Demo Mode") },
+            text = { Text("Try the remote without pairing a TV. All buttons are visible but no commands are sent to any device.\n\nTap the Settings icon (⚙) in the remote to exit Demo Mode.") },
+            confirmButton = {
+                Button(onClick = { showDemoConfirm = false; vm.enterDemoMode() }) {
+                    Text("Start Demo")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDemoConfirm = false }) { Text("Cancel") }
+            }
+        )
+    }
 
     if (showForgetConfirm) {
         AlertDialog(
@@ -103,7 +120,6 @@ fun MobileSetupScreen(
                     SetupStatus.Probing -> "Probing TVs…" to false
                     is SetupStatus.Verified -> "Found ${s.count} TV(s)" to false
                     is SetupStatus.Error -> "Error: ${s.reason ?: "unknown"}" to true
-                    else -> "Ready" to false
                 }
                 Text(
                     text = statusText,
@@ -230,6 +246,13 @@ fun MobileSetupScreen(
                         }
                     }
                 }
+            }
+
+            item {
+                OutlinedButton(
+                    onClick = { showDemoConfirm = true },
+                    modifier = Modifier.fillMaxWidth()
+                ) { Text("Demo Mode") }
             }
 
             if (onClose != null) {
