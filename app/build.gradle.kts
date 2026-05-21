@@ -11,7 +11,7 @@ android {
         applicationId = "de.robnice.philipstvcontrol.phone"
         minSdk = 26
         targetSdk = 36
-        versionCode = 10001000
+        versionCode = 1010001000
         versionName = "1.1.0-mobile"
     }
 
