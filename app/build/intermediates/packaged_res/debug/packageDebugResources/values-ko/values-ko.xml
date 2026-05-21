@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Phreemote</string>
+    <string name="privacy_footer">개인정보</string>
+    <string name="privacy_title">개인정보 처리방침</string>
+</resources>

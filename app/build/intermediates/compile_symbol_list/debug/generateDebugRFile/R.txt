@@ -1,0 +1,4 @@
+int drawable ic_launcher_foreground 0x0
+int string app_name 0x0
+int string privacy_footer 0x0
+int string privacy_title 0x0

@@ -1,0 +1,5 @@
+de.robnice.philipstvcontrol.mobile
+drawable ic_launcher_foreground
+string app_name
+string privacy_footer
+string privacy_title

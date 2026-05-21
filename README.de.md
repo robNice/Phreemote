@@ -1,161 +1,124 @@
-# Phreemote – TV-Steuerung für die Galaxy Watch
+# Phreemote – Philips TV-Steuerung für Android & Wear OS
 
-Phreemote verwandelt deine **Galaxy Watch** in eine kompakte Fernbedienung für deinen Fernseher.
+Phreemote verwandelt dein **Android-Smartphone** oder deine **Wear-OS-Uhr** in eine Fernbedienung für deinen Philips-Fernseher.
 
-![mainscreen](docs/main-screen.png)
-![numpad](docs/numpad-screen.png)
-![more](docs/more-screen.png)
+<img src="docs/logo.webp" width="80" />
 
-Die App funktioniert **nur mit Fernsehern, die eine JointSpace-API bereitstellen**. Getestet werden konnte bislang **nur API-Version 6**. Wenn du einen Fernseher mit einer **anderen JointSpace-API-Version** verwendest, freue ich mich über **Erfahrungsberichte und Beiträge aus der Community**, damit die Kompatibilität besser eingeschätzt und weiter verbessert werden kann.
+> Die App funktioniert **nur mit Fernsehern, die eine JointSpace-API bereitstellen**. Getestet wurde bislang API-Version 6. Bei einem **anderen JointSpace-API-Version** freue ich mich über Erfahrungsberichte und Beiträge aus der Community.
 
-Der wichtigste Schritt bei der ersten Nutzung ist das **Pairing** zwischen Uhr und Fernseher. Dieses README richtet sich in erster Linie an **Anwender** und erklärt vor allem genau diesen Vorgang.
+---
 
 ## Inhaltsverzeichnis
 
-- [Was die App macht](#was-die-app-macht)
 - [Voraussetzungen](#voraussetzungen)
-- [Erste Einrichtung](#erste-einrichtung)
-- [Pairing – Schritt für Schritt](#pairing--schritt-für-schritt)
+- [Android-App](#android-app)
+- [Wear-OS-App](#wear-os-app)
+- [Erste Einrichtung & Pairing](#erste-einrichtung--pairing)
   - [1. Fernseher suchen](#1-fernseher-suchen)
   - [2. Fernseher auswählen](#2-fernseher-auswählen)
   - [3. Pairing-Code am Fernseher ablesen](#3-pairing-code-am-fernseher-ablesen)
-  - [4. Code auf der Uhr eingeben](#4-code-auf-der-uhr-eingeben)
-  - [5. Kopplung bestätigen](#5-kopplung-bestätigen)
-  - [6. Fernbedienung verwenden](#6-fernbedienung-verwenden)
+  - [4. Code eingeben](#4-code-eingeben)
+  - [5. Fertig](#5-fertig)
 - [Wenn das Pairing nicht klappt](#wenn-das-pairing-nicht-klappt)
-- [Kurzfassung](#kurzfassung)
-  - [Erste Nutzung](#erste-nutzung)
 - [Lizenz](#lizenz)
 
-## Was die App macht
-
-Phreemote verwandelt deine Galaxy Watch in eine kompakte TV-Fernbedienung.  
-Nach erfolgreicher Kopplung kannst du – je nach TV-Unterstützung – typische Fernbedienungsfunktionen direkt auf der Uhr nutzen.
+---
 
 ## Voraussetzungen
 
-Vor dem ersten Verbinden sollten folgende Punkte erfüllt sein:
+- **Smartphone oder Uhr** und **Fernseher** müssen im **selben lokalen Netzwerk** sein
+- Der Fernseher muss **vollständig eingeschaltet** sein (kein Standby)
+- Beim ersten Pairing am besten **in der Nähe des Fernsehers** bleiben – der TV zeigt einen Code an
 
-- Die **Galaxy Watch** und der **Fernseher** befinden sich im **selben Netzwerk**
-- Der Fernseher ist **eingeschaltet**
-- Die TV-Steuerung über Netzwerk ist auf dem Fernseher grundsätzlich verfügbar
-- Während des ersten Verbindens solltest du **in der Nähe des Fernsehers** sein, da auf dem TV ein Pairing-Code angezeigt werden kann
+---
 
-## Erste Einrichtung
+## Android-App
 
-Beim ersten Start der App gelangst du in den **Setup-Bereich**.
+| TV suchen | Pairing | Fernbedienung |
+|:---------:|:-------:|:-------------:|
+| ![scan](docs/scan-lan-mobile.png) | ![pair](docs/pair-mobile.png) | ![remote](docs/main-screen-mobile.png) |
 
-Dort sucht die App im Netzwerk nach kompatiblen Fernsehern.  
-Wird ein TV gefunden, kannst du ihn auswählen und anschließend koppeln.
+Die Smartphone-App bietet eine vollständige Fernbedienung mit allen gängigen TV-Funktionen.  
+Smartphone und Uhr koppeln **unabhängig voneinander** – das Pairing auf dem Handy hat keinen Einfluss auf die Uhr und umgekehrt.
 
-Der typische Ablauf sieht so aus:
+---
 
-1. App auf der Uhr öffnen
-2. **LAN-Scan** starten
-3. Gefundenen Fernseher auswählen
-4. Pairing-Code auf dem Fernseher ablesen
-5. Code auf der Uhr eingeben
-6. Verbindung bestätigen
-7. Danach kann die Fernbedienung genutzt werden
+## Wear-OS-App
 
-# Pairing – Schritt für Schritt
+| Hauptfernbedienung | Ziffernfeld | Weitere Funktionen |
+|:-----------------:|:-----------:|:-----------------:|
+| ![main](docs/main-screen.png) | ![numpad](docs/numpad-screen.png) | ![more](docs/more-screen.png) |
 
-## 1. Fernseher suchen
+Die Wear-OS-App ist für runde Uhrendisplays optimiert. Durch Wischen nach links oder rechts wechselst du zwischen Hauptfernbedienung, Ziffernfeld und weiteren Funktionen.
 
-![scan](docs/scan-lan.png)
+---
 
-Im Setup startest du die Suche nach Fernsehern im lokalen Netzwerk.
+## Erste Einrichtung & Pairing
 
-Die App versucht dabei:
+Beide Apps durchlaufen beim ersten Start denselben Einrichtungsablauf.
 
-- Geräte im Netzwerk zu finden
-- erkannte Geräte zu prüfen
-- kompatible TVs in einer Liste anzuzeigen
+### 1. Fernseher suchen
 
-Sobald dein Fernseher in der Liste erscheint, kannst du ihn antippen.
+| Smartphone | Uhr |
+|:----------:|:---:|
+| ![scan-mobile](docs/scan-lan-mobile.png) | ![scan-wear](docs/scan-lan.png) |
 
-## 2. Fernseher auswählen
+Tippe auf **LAN scannen**, um das lokale Netzwerk nach kompatiblen Fernsehern zu durchsuchen.  
+Die App erkennt, prüft und listet gefundene Geräte auf.  
+Sobald dein Fernseher erscheint, antippen.
 
-Nach dem Antippen des gefundenen TVs startet der Kopplungsvorgang.
+### 2. Fernseher auswählen
 
-Je nach TV kann nun auf dem Fernseher ein Hinweis erscheinen, dass eine neue Fernbedienung bzw. ein neues Gerät verbunden werden möchte.
+Nach dem Antippen startet der Kopplungsvorgang automatisch.  
+Auf dem Fernseher kann ein Hinweis erscheinen, dass ein neues Gerät verbunden werden möchte.
 
-## 3. Pairing-Code am Fernseher ablesen
+### 3. Pairing-Code am Fernseher ablesen
 
-Während der Kopplung zeigt der Fernseher in der Regel einen **mehrstelligen Code** an.
+Der Fernseher zeigt einen **mehrstelligen Code** auf dem Bildschirm an.  
+Dieser Code ist nur kurz gültig – am besten schon bereithalten, bevor du weitermachst.
 
-Dieser Code ist nur kurzzeitig gültig und dient dazu, die Verbindung zwischen Uhr und TV eindeutig zu bestätigen.
+### 4. Code eingeben
 
-## 4. Code auf der Uhr eingeben
+| Smartphone | Uhr |
+|:----------:|:---:|
+| ![pair-mobile](docs/pair-mobile.png) | ![pair-wear](docs/pair.png) |
 
-![pairing](docs/pair.png)
+Ein **Ziffernfeld** erscheint in der App.
 
-Auf der Uhr erscheint ein **Ziffernfeld**.
+- Ziffern des angezeigten Codes antippen
+- Mit **⌫** Fehleingaben korrigieren
+- Mit **OK** bestätigen
+- Mit **✕** abbrechen und zurück zur TV-Auswahl
 
-Dort gibst du den auf dem Fernseher angezeigten Code ein:
+Den Code möglichst zügig eingeben – er läuft nach kurzer Zeit ab.
 
-- Ziffern antippen
-- mit **Backspace** korrigieren, falls nötig
-- mit **OK** bestätigen
-- mit **Cancel** abbrechen
+### 5. Fertig
 
-Wichtig:  
-Gib den Code möglichst direkt und ohne lange Verzögerung ein, damit er nicht abläuft.
+War der Code korrekt, ist der Fernseher jetzt **gekoppelt**.  
+Die App wechselt direkt zur Fernbedienungsansicht.  
+Das Pairing muss **bei späteren Starts nicht wiederholt** werden.
 
-## 5. Kopplung bestätigen
+---
 
-Wenn der Code korrekt war, wird das Pairing abgeschlossen.
+## Wenn das Pairing nicht klappt
 
-Danach gilt der Fernseher als **gekoppelt** bzw. **vertrauenswürdig**.  
-Ab diesem Zeitpunkt musst du den Pairing-Vorgang normalerweise **nicht bei jeder Nutzung wiederholen**.
+**Smartphone/Uhr und Fernseher nicht im selben Netzwerk?**  
+Die häufigste Ursache. Sicherstellen, dass beide Geräte dasselbe WLAN nutzen.
 
-## 6. Fernbedienung verwenden
+**Fernseher nicht vollständig eingeschaltet?**  
+Der TV muss vollständig gestartet sein, kein unklarer Standby-Zustand.
 
-Nach erfolgreichem Pairing wechselt die App zur Fernbedienungsansicht.
+**Falschen Code eingegeben?**  
+Schon eine falsche Ziffer verhindert die Kopplung. Vorgang neu starten und Code sorgfältig eingeben.
 
-Dort kannst du den TV direkt über die Uhr bedienen.
+**Code abgelaufen?**  
+Wenn die Eingabe zu lange dauert, wird der Code ungültig. Einfach das Pairing neu starten.
 
-# Wenn das Pairing nicht klappt
+**Noch immer kein Erfolg?**  
+Im Setup-Bereich **TV entfernen** tippen, erneut scannen und das Pairing von vorne beginnen.
 
-Falls die Verbindung nicht sofort funktioniert, helfen meist diese Punkte:
-
-## Uhr und TV im selben Netzwerk?
-Die häufigste Ursache ist, dass Uhr und Fernseher nicht im gleichen lokalen Netzwerk erreichbar sind.
-
-## Fernseher wirklich eingeschaltet?
-Der Fernseher sollte vollständig eingeschaltet sein, nicht nur im unklaren Standby-Zustand.
-
-## Pairing-Code korrekt eingegeben?
-Schon eine falsche Ziffer verhindert die Kopplung.  
-Im Zweifel den Vorgang erneut starten und den Code noch einmal sorgfältig eingeben.
-
-## Code abgelaufen?
-Wenn die Eingabe zu lange dauert, kann der Code ungültig werden.  
-Dann den Pairing-Vorgang einfach neu starten.
-
-## TV zwar gefunden, aber keine Verbindung?
-Dann erneut scannen, den TV noch einmal auswählen und die Kopplung wiederholen.
-
-## Früher gekoppelt, jetzt Probleme?
-In solchen Fällen hilft oft:
-
-- App neu öffnen
-- TV erneut auswählen
-- Kopplung erneut durchführen
-
-# Kurzfassung
-
-## Erste Nutzung
-
-1. App öffnen  
-2. TV suchen  
-3. TV auswählen  
-4. Pairing-Code vom Fernseher ablesen  
-5. Code auf der Uhr eingeben  
-6. Bestätigen  
-7. Fertig
-
---
+---
 
 ## Lizenz
+
 [`MIT`](./LICENSE)

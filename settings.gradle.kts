@@ -21,5 +21,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Philips TV Control"
+include(":wear")
+include(":shared")
 include(":app")
- 

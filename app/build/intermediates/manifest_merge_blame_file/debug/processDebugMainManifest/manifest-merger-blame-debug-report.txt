@@ -1,0 +1,173 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="de.robnice.philipstvcontrol.phone"
+4    android:versionCode="10001000"
+5    android:versionName="1.1.0" >
+6
+7    <uses-sdk
+7-->INJECTED
+8        android:minSdkVersion="26"
+8-->INJECTED
+9        android:targetSdkVersion="36" />
+9-->INJECTED
+10
+11    <uses-permission android:name="android.permission.WAKE_LOCK" />
+11-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:4:5-68
+11-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:4:22-65
+12    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+12-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:5:5-86
+12-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:5:22-83
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:6:5-67
+13-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:6:22-64
+14
+15    <permission
+15-->[androidx.core:core:1.16.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\76c895d3d0bcc71afadebc3f8709e2c7\workspace\transformed\core-1.16.0\AndroidManifest.xml:22:5-24:47
+16        android:name="de.robnice.philipstvcontrol.phone.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+16-->[androidx.core:core:1.16.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\76c895d3d0bcc71afadebc3f8709e2c7\workspace\transformed\core-1.16.0\AndroidManifest.xml:23:9-81
+17        android:protectionLevel="signature" />
+17-->[androidx.core:core:1.16.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\76c895d3d0bcc71afadebc3f8709e2c7\workspace\transformed\core-1.16.0\AndroidManifest.xml:24:9-44
+18
+19    <uses-permission android:name="de.robnice.philipstvcontrol.phone.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+19-->[androidx.core:core:1.16.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\76c895d3d0bcc71afadebc3f8709e2c7\workspace\transformed\core-1.16.0\AndroidManifest.xml:26:5-97
+19-->[androidx.core:core:1.16.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\76c895d3d0bcc71afadebc3f8709e2c7\workspace\transformed\core-1.16.0\AndroidManifest.xml:26:22-94
+20
+21    <application
+21-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:8:5-23:19
+22        android:allowBackup="true"
+22-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:9:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.16.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\76c895d3d0bcc71afadebc3f8709e2c7\workspace\transformed\core-1.16.0\AndroidManifest.xml:28:18-86
+24        android:debuggable="true"
+25        android:extractNativeLibs="false"
+25-->INJECTED
+26        android:label="@string/app_name"
+26-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:10:9-41
+27        android:supportsRtl="true"
+27-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:11:9-35
+28        android:testOnly="true"
+29        android:theme="@android:style/Theme.Material.Light.NoActionBar" >
+29-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:12:9-72
+30        <activity
+30-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:14:9-22:20
+31            android:name="de.robnice.philipstvcontrol.mobile.presentation.MobileMainActivity"
+31-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:15:13-60
+32            android:exported="true"
+32-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:16:13-36
+33            android:windowSoftInputMode="adjustResize" >
+33-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:17:13-55
+34            <intent-filter>
+34-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:18:13-21:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:19:17-69
+35-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:19:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:20:17-77
+37-->C:\Users\cornice\AndroidStudioProjects\PhilipsTVControl\app\src\main\AndroidManifest.xml:20:27-74
+38            </intent-filter>
+39        </activity>
+40
+41        <uses-library
+41-->[androidx.window:window:1.5.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\afcb5e591416b6746cefc392316d1340\workspace\transformed\window-1.5.0\AndroidManifest.xml:23:9-25:40
+42            android:name="androidx.window.extensions"
+42-->[androidx.window:window:1.5.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\afcb5e591416b6746cefc392316d1340\workspace\transformed\window-1.5.0\AndroidManifest.xml:24:13-54
+43            android:required="false" />
+43-->[androidx.window:window:1.5.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\afcb5e591416b6746cefc392316d1340\workspace\transformed\window-1.5.0\AndroidManifest.xml:25:13-37
+44        <uses-library
+44-->[androidx.window:window:1.5.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\afcb5e591416b6746cefc392316d1340\workspace\transformed\window-1.5.0\AndroidManifest.xml:26:9-28:40
+45            android:name="androidx.window.sidecar"
+45-->[androidx.window:window:1.5.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\afcb5e591416b6746cefc392316d1340\workspace\transformed\window-1.5.0\AndroidManifest.xml:27:13-51
+46            android:required="false" />
+46-->[androidx.window:window:1.5.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\afcb5e591416b6746cefc392316d1340\workspace\transformed\window-1.5.0\AndroidManifest.xml:28:13-37
+47
+48        <activity
+48-->[androidx.compose.ui:ui-tooling-android:1.10.4] C:\Users\cornice\.gradle\caches\9.3.1\transforms\8eab772c18adf97bcab71f72857fcb00\workspace\transformed\ui-tooling\AndroidManifest.xml:23:9-25:39
+49            android:name="androidx.compose.ui.tooling.PreviewActivity"
+49-->[androidx.compose.ui:ui-tooling-android:1.10.4] C:\Users\cornice\.gradle\caches\9.3.1\transforms\8eab772c18adf97bcab71f72857fcb00\workspace\transformed\ui-tooling\AndroidManifest.xml:24:13-71
+50            android:exported="true" />
+50-->[androidx.compose.ui:ui-tooling-android:1.10.4] C:\Users\cornice\.gradle\caches\9.3.1\transforms\8eab772c18adf97bcab71f72857fcb00\workspace\transformed\ui-tooling\AndroidManifest.xml:25:13-36
+51
+52        <provider
+52-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\792938bc22bc44574ddcc4ef0cb65f52\workspace\transformed\emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
+53            android:name="androidx.startup.InitializationProvider"
+53-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\792938bc22bc44574ddcc4ef0cb65f52\workspace\transformed\emoji2-1.4.0\AndroidManifest.xml:25:13-67
+54            android:authorities="de.robnice.philipstvcontrol.phone.androidx-startup"
+54-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\792938bc22bc44574ddcc4ef0cb65f52\workspace\transformed\emoji2-1.4.0\AndroidManifest.xml:26:13-68
+55            android:exported="false" >
+55-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\792938bc22bc44574ddcc4ef0cb65f52\workspace\transformed\emoji2-1.4.0\AndroidManifest.xml:27:13-37
+56            <meta-data
+56-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\792938bc22bc44574ddcc4ef0cb65f52\workspace\transformed\emoji2-1.4.0\AndroidManifest.xml:29:13-31:52
+57                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+57-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\792938bc22bc44574ddcc4ef0cb65f52\workspace\transformed\emoji2-1.4.0\AndroidManifest.xml:30:17-75
+58                android:value="androidx.startup" />
+58-->[androidx.emoji2:emoji2:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\792938bc22bc44574ddcc4ef0cb65f52\workspace\transformed\emoji2-1.4.0\AndroidManifest.xml:31:17-49
+59            <meta-data
+59-->[androidx.lifecycle:lifecycle-process:2.10.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\f3fc0f18f9d8939cd8b1dbb8e02915a3\workspace\transformed\lifecycle-process-2.10.0\AndroidManifest.xml:29:13-31:52
+60                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+60-->[androidx.lifecycle:lifecycle-process:2.10.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\f3fc0f18f9d8939cd8b1dbb8e02915a3\workspace\transformed\lifecycle-process-2.10.0\AndroidManifest.xml:30:17-78
+61                android:value="androidx.startup" />
+61-->[androidx.lifecycle:lifecycle-process:2.10.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\f3fc0f18f9d8939cd8b1dbb8e02915a3\workspace\transformed\lifecycle-process-2.10.0\AndroidManifest.xml:31:17-49
+62            <meta-data
+62-->[com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\cornice\.gradle\caches\9.3.1\transforms\eee765245e5c2e343a4092ee13485813\workspace\transformed\okhttp-release\AndroidManifest.xml:16:13-18:52
+63                android:name="okhttp3.internal.platform.PlatformInitializer"
+63-->[com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\cornice\.gradle\caches\9.3.1\transforms\eee765245e5c2e343a4092ee13485813\workspace\transformed\okhttp-release\AndroidManifest.xml:17:17-77
+64                android:value="androidx.startup" />
+64-->[com.squareup.okhttp3:okhttp-android:5.3.2] C:\Users\cornice\.gradle\caches\9.3.1\transforms\eee765245e5c2e343a4092ee13485813\workspace\transformed\okhttp-release\AndroidManifest.xml:18:17-49
+65            <meta-data
+65-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+66                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+66-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+67                android:value="androidx.startup" />
+67-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+68        </provider>
+69
+70        <activity
+70-->[androidx.compose.ui:ui-test-manifest:1.10.4] C:\Users\cornice\.gradle\caches\9.3.1\transforms\01f6c17efef08749ec72f2c56ae2e9a2\workspace\transformed\ui-test-manifest-1.10.4\AndroidManifest.xml:23:9-26:79
+71            android:name="androidx.activity.ComponentActivity"
+71-->[androidx.compose.ui:ui-test-manifest:1.10.4] C:\Users\cornice\.gradle\caches\9.3.1\transforms\01f6c17efef08749ec72f2c56ae2e9a2\workspace\transformed\ui-test-manifest-1.10.4\AndroidManifest.xml:24:13-63
+72            android:exported="true"
+72-->[androidx.compose.ui:ui-test-manifest:1.10.4] C:\Users\cornice\.gradle\caches\9.3.1\transforms\01f6c17efef08749ec72f2c56ae2e9a2\workspace\transformed\ui-test-manifest-1.10.4\AndroidManifest.xml:25:13-36
+73            android:theme="@android:style/Theme.Material.Light.NoActionBar" />
+73-->[androidx.compose.ui:ui-test-manifest:1.10.4] C:\Users\cornice\.gradle\caches\9.3.1\transforms\01f6c17efef08749ec72f2c56ae2e9a2\workspace\transformed\ui-test-manifest-1.10.4\AndroidManifest.xml:26:13-76
+74
+75        <receiver
+75-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+76            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+76-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+77            android:directBootAware="false"
+77-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+78            android:enabled="true"
+78-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+79            android:exported="true"
+79-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+80            android:permission="android.permission.DUMP" >
+80-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+81            <intent-filter>
+81-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+82                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+82-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+82-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+83            </intent-filter>
+84            <intent-filter>
+84-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+85                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+85-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+85-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+86            </intent-filter>
+87            <intent-filter>
+87-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+88                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+88-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+88-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+89            </intent-filter>
+90            <intent-filter>
+90-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+91                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+91-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+91-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cornice\.gradle\caches\9.3.1\transforms\b7ad89b3707d1b7fc3836d5f24976103\workspace\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+92            </intent-filter>
+93        </receiver>
+94    </application>
+95
+96</manifest>
