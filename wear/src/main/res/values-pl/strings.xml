@@ -41,4 +41,5 @@
     <string name="pairing_wait_tv">Sprawdź na telewizorze monit o PIN.</string>
     <string name="pairing_error">Błąd parowania: %1$s</string>
     <string name="demo_mode_exited">Tryb demo zakończony</string>
+
 </resources>

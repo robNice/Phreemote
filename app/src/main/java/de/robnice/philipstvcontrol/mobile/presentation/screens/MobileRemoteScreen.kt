@@ -72,6 +72,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
+import de.robnice.philipstvcontrol.domain.model.CustomButton
 import de.robnice.philipstvcontrol.domain.model.RemoteAction
 import de.robnice.philipstvcontrol.mobile.R
 
@@ -128,6 +129,8 @@ fun PhreemoteBar(actions: @Composable RowScope.() -> Unit = {}) {
 fun MobileRemoteScreen(
     onOpenSettings: () -> Unit,
     onRemoteAction: (RemoteAction) -> Unit,
+    customButtons: List<CustomButton> = emptyList(),
+    onCustomCommand: (String) -> Unit = {},
     tvOnline: Boolean? = null
 ) {
     var showPrivacy by remember { mutableStateOf(false) }
@@ -249,8 +252,8 @@ fun MobileRemoteScreen(
                 }
             }
 
-            // D-pad
-            item { DPadSection(onRemoteAction) }
+            // D-pad (custom buttons in corners)
+            item { DPadSection(onRemoteAction, customButtons, onCustomCommand) }
 
             // Back | Home | TV
             item {
@@ -314,6 +317,7 @@ fun MobileRemoteScreen(
                     MobileNumpadButton("0") { onRemoteAction(RemoteAction.DIGIT_0) }
                 }
             }
+
         }
     }
 }
@@ -329,7 +333,11 @@ private fun CenteredRow(gap: Dp = 0.dp, content: @Composable () -> Unit) {
 }
 
 @Composable
-private fun DPadSection(onRemoteAction: (RemoteAction) -> Unit) {
+private fun DPadSection(
+    onRemoteAction: (RemoteAction) -> Unit,
+    customButtons: List<CustomButton> = emptyList(),
+    onCustomCommand: (String) -> Unit = {}
+) {
     val spacing = 4.dp
     Box(
         modifier = Modifier
@@ -343,9 +351,9 @@ private fun DPadSection(onRemoteAction: (RemoteAction) -> Unit) {
             verticalArrangement = Arrangement.spacedBy(spacing)
         ) {
             Row(horizontalArrangement = Arrangement.spacedBy(spacing)) {
-                Spacer(Modifier.size(BTN))
+                CustomSlotButton(customButtons.getOrNull(0), BTN, onCustomCommand)
                 MobileButton(Icons.Rounded.KeyboardArrowUp, size = BTN) { onRemoteAction(RemoteAction.CURSOR_UP) }
-                Spacer(Modifier.size(BTN))
+                CustomSlotButton(customButtons.getOrNull(2), BTN, onCustomCommand)
             }
             Row(horizontalArrangement = Arrangement.spacedBy(spacing)) {
                 MobileButton(Icons.AutoMirrored.Rounded.KeyboardArrowLeft, size = BTN) { onRemoteAction(RemoteAction.CURSOR_LEFT) }
@@ -358,11 +366,24 @@ private fun DPadSection(onRemoteAction: (RemoteAction) -> Unit) {
                 MobileButton(Icons.AutoMirrored.Rounded.KeyboardArrowRight, size = BTN) { onRemoteAction(RemoteAction.CURSOR_RIGHT) }
             }
             Row(horizontalArrangement = Arrangement.spacedBy(spacing)) {
-                Spacer(Modifier.size(BTN))
+                CustomSlotButton(customButtons.getOrNull(1), BTN, onCustomCommand)
                 MobileButton(Icons.Rounded.KeyboardArrowDown, size = BTN) { onRemoteAction(RemoteAction.CURSOR_DOWN) }
-                Spacer(Modifier.size(BTN))
+                CustomSlotButton(customButtons.getOrNull(3), BTN, onCustomCommand)
             }
         }
+    }
+}
+
+@Composable
+private fun CustomSlotButton(
+    btn: CustomButton?,
+    size: Dp,
+    onCustomCommand: (String) -> Unit
+) {
+    if (btn != null && btn.isActive) {
+        MobileNumpadButton(text = btn.label, size = size) { onCustomCommand(btn.command) }
+    } else {
+        Spacer(Modifier.size(size))
     }
 }
 

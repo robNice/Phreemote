@@ -28,8 +28,11 @@ import java.net.Inet4Address
 import java.net.InetSocketAddress
 import java.net.NetworkInterface
 import java.net.Socket
+import de.robnice.philipstvcontrol.data.settings.CustomButtonStore
 import de.robnice.philipstvcontrol.data.settings.TvSelectionStore
 import de.robnice.philipstvcontrol.data.tv.PhilipsPairingService
+import de.robnice.philipstvcontrol.domain.model.CUSTOM_BUTTON_COUNT
+import de.robnice.philipstvcontrol.domain.model.CustomButton
 import de.robnice.philipstvcontrol.domain.model.RemoteAction
 import de.robnice.philipstvcontrol.data.tv.PhilipsRemoteService
 
@@ -78,6 +81,13 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     private val _selectedDigestPass = MutableStateFlow<String?>(null)
     val selectedDigestPass: StateFlow<String?> = _selectedDigestPass
 
+    private val customButtonStore = CustomButtonStore(app.applicationContext)
+
+    private val _customButtons = MutableStateFlow<List<CustomButton>>(
+        List(CUSTOM_BUTTON_COUNT) { CustomButton() }
+    )
+    val customButtons: StateFlow<List<CustomButton>> = _customButtons
+
     private val pairingService = PhilipsPairingService(okHttpFactory)
 
     private val _pairingRequest = MutableStateFlow<PhilipsPairingService.PairRequestResult?>(null)
@@ -99,6 +109,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             _selectedPaired.value = selectionStore.getSelectedPaired()
             _selectedDigestUser.value = selectionStore.getSelectedDigestUser()
             _selectedDigestPass.value = selectionStore.getSelectedDigestPass()
+            _customButtons.value = customButtonStore.getAll()
             _bootstrapped.value = true
 
             val ip = _selectedIp.value
@@ -408,6 +419,41 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             } catch (e: Exception) {
                 _tvOnline.value = false
                 Log.e("TV", "Remote action failed: $action", e)
+            }
+        }
+    }
+
+    fun updateCustomButton(index: Int, button: CustomButton) {
+        viewModelScope.launch(Dispatchers.IO) {
+            customButtonStore.set(index, button)
+            val updated = _customButtons.value.toMutableList()
+            updated[index] = button
+            _customButtons.value = updated
+        }
+    }
+
+    fun sendCustomCommand(command: String) {
+        if (_demoMode.value) return
+        viewModelScope.launch(Dispatchers.IO) {
+            val ip = _selectedIp.value
+            val basePath = _selectedBasePath.value
+            if (ip.isNullOrBlank()) return@launch
+            val pin = trustStore.getPin(ip)
+            if (pin.isNullOrBlank()) return@launch
+            val digestUser = _selectedDigestUser.value
+            val digestPass = _selectedDigestPass.value
+            if (digestUser.isNullOrBlank() || digestPass.isNullOrBlank()) return@launch
+            try {
+                remoteMutex.lock()
+                try {
+                    val success = remoteService.sendKey(ip, pin, basePath, digestUser, digestPass, command)
+                    _tvOnline.value = success
+                } finally {
+                    remoteMutex.unlock()
+                }
+            } catch (e: Exception) {
+                _tvOnline.value = false
+                Log.e("TV", "Custom command failed: $command", e)
             }
         }
     }

@@ -12,6 +12,8 @@ Phreemote verwandelt dein **Android-Smartphone** oder deine **Wear-OS-Uhr** in e
 
 - [Voraussetzungen](#voraussetzungen)
 - [Android-App](#android-app)
+  - [Eigene Tasten](#eigene-tasten)
+  - [Demo-Modus](#demo-modus)
 - [Wear-OS-App](#wear-os-app)
 - [Erste Einrichtung & Pairing](#erste-einrichtung--pairing)
   - [1. Fernseher suchen](#1-fernseher-suchen)
@@ -40,6 +42,18 @@ Phreemote verwandelt dein **Android-Smartphone** oder deine **Wear-OS-Uhr** in e
 
 Die Smartphone-App bietet eine vollständige Fernbedienung mit allen gängigen TV-Funktionen.  
 Smartphone und Uhr koppeln **unabhängig voneinander** – das Pairing auf dem Handy hat keinen Einfluss auf die Uhr und umgekehrt.
+
+### Eigene Tasten
+
+In der Android-App lassen sich bis zu **4 eigene Tasten** konfigurieren, die in den Ecken des Steuerkreuzes erscheinen.  
+Über **Einstellungen (⚙)** den Bereich **Eigene Tasten** aufklappen. Für jeden Slot kann ein beliebiger JointSpace-Befehl (z. B. Netflix, Amazon, Ambilight) und ein Emoji oder Symbol als Bezeichnung gewählt werden.  
+Nur Slots, bei denen Befehl und Symbol gesetzt und die aktiviert sind, werden in der Fernbedienung angezeigt.
+
+### Demo-Modus
+
+In den Einstellungen **Demo-Modus** antippen, um die Fernbedienung ohne gekoppelten TV auszuprobieren.  
+Alle Tasten sind sichtbar und bedienbar, es werden jedoch keine Befehle an ein Gerät gesendet.  
+Den Demo-Modus beendet man über das Einstellungs-Symbol (⚙) in der Fernbedienungsansicht.
 
 ---
 

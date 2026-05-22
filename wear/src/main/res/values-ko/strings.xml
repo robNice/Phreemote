@@ -41,4 +41,5 @@
     <string name="pairing_wait_tv">TV에서 PIN 요청을 확인하세요.</string>
     <string name="pairing_error">페어링 오류: %1$s</string>
     <string name="demo_mode_exited">데모 모드 종료됨</string>
+
 </resources>

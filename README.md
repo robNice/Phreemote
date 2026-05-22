@@ -12,6 +12,8 @@ Phreemote turns your **Android phone** or **Wear OS watch** into a remote contro
 
 - [Requirements](#requirements)
 - [Android App](#android-app)
+  - [Custom Buttons](#custom-buttons)
+  - [Demo Mode](#demo-mode)
 - [Wear OS App](#wear-os-app)
 - [First-time setup & pairing](#first-time-setup--pairing)
   - [1. Search for the TV](#1-search-for-the-tv)
@@ -40,6 +42,18 @@ Phreemote turns your **Android phone** or **Wear OS watch** into a remote contro
 
 The phone app offers a full-screen remote with all common TV functions.  
 Phone and watch pair **independently** — pairing on the phone does not affect the watch, and vice versa.
+
+### Custom Buttons
+
+The Android app lets you configure up to **4 custom buttons** that appear in the corners of the D-pad.  
+Open **Settings (⚙)** and expand the **Custom Buttons** section. For each slot you can choose any JointSpace command (e.g. Netflix, Amazon, Ambilight) and assign an emoji or symbol as its label.  
+Only slots that have both a command and a label set, and are switched on, are shown on the remote.
+
+### Demo Mode
+
+Tap **Demo Mode** in the settings to try the remote without pairing a TV.  
+All buttons are visible and interactive, but no commands are sent to any device.  
+Exit demo mode by tapping the settings icon (⚙) in the remote.
 
 ---
 

@@ -41,4 +41,5 @@
     <string name="pairing_wait_tv">Controlla il TV per la richiesta del PIN.</string>
     <string name="pairing_error">Errore di associazione: %1$s</string>
     <string name="demo_mode_exited">Modalità demo terminata</string>
+
 </resources>

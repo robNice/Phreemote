@@ -226,6 +226,7 @@ fun NumpadView(onRemoteAction: (RemoteAction) -> Unit) {
                     contentColor = MaterialTheme.colorScheme.onPrimary
                 ) { onRemoteAction(RemoteAction.OK) }
             }
+
         }
     }
 }

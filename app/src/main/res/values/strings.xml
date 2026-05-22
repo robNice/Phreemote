@@ -2,9 +2,79 @@
 <resources>
     <string name="app_name">Phreemote</string>
     <string name="privacy_footer">Privacy</string>
+    <string name="privacy_title">Privacy Policy</string>
+
+    <string name="setup_status_ready">Ready</string>
+    <string name="setup_scan_lan">Scan LAN</string>
+    <string name="setup_discovering">Searching your network…</string>
+    <string name="setup_found_ips">Found %1$d IPs, probing…</string>
+    <string name="setup_verified_tvs">Found %1$d TV(s)</string>
+    <string name="setup_probing">Probing TVs…</string>
+    <string name="setup_error">Error: %1$s</string>
+    <string name="setup_connected">Connected</string>
+    <string name="setup_cancel">Cancel</string>
+    <string name="setup_scanning">Scanning…</string>
+    <string name="setup_found_tvs">Found TVs</string>
+    <string name="setup_remove_tv_confirm_title">Remove TV?</string>
+    <string name="setup_remove_tv_confirm_yes">Remove</string>
+    <string name="setup_close">Back</string>
+
+    <string name="tv_name_with_ip">%1$s (%2$s)</string>
+    <string name="tv_base_default">/system</string>
+    <string name="tv_api_base">API %1$s · %2$s</string>
+
     <string name="demo_mode">Demo Mode</string>
     <string name="demo_mode_description">Try the remote without pairing a TV. All buttons are visible but no commands are sent to any device.\n\nTap the Settings icon (⚙) in the remote to exit Demo Mode.</string>
     <string name="demo_mode_start">Start Demo</string>
     <string name="demo_mode_exited">Demo mode ended</string>
-    <string name="privacy_title">Privacy Policy</string>
+
+    <string name="custom_buttons">Custom Buttons</string>
+    <string name="custom_button_title">Button %1$d</string>
+    <string name="custom_button_command">Command</string>
+    <string name="custom_button_label">Label</string>
+    <string name="custom_button_pick_icon">Pick an icon</string>
+    <string name="custom_buttons_hint">Configure up to 4 commands. Active buttons appear in the corners of the D-pad.</string>
+
+    <string name="cmd_standby">Standby</string>
+    <string name="cmd_mute">Mute</string>
+    <string name="cmd_volume_up">Volume Up</string>
+    <string name="cmd_volume_down">Volume Down</string>
+    <string name="cmd_channel_up">Channel Up</string>
+    <string name="cmd_channel_down">Channel Down</string>
+    <string name="cmd_cursor_up">Cursor Up</string>
+    <string name="cmd_cursor_down">Cursor Down</string>
+    <string name="cmd_cursor_left">Cursor Left</string>
+    <string name="cmd_cursor_right">Cursor Right</string>
+    <string name="cmd_confirm">Confirm</string>
+    <string name="cmd_back">Back</string>
+    <string name="cmd_home">Home</string>
+    <string name="cmd_options">Options</string>
+    <string name="cmd_source">Source</string>
+    <string name="cmd_info">Info</string>
+    <string name="cmd_watch_tv">Watch TV</string>
+    <string name="cmd_guide">Guide</string>
+    <string name="cmd_play_pause">Play / Pause</string>
+    <string name="cmd_play">Play</string>
+    <string name="cmd_pause">Pause</string>
+    <string name="cmd_stop">Stop</string>
+    <string name="cmd_fast_forward">Fast Forward</string>
+    <string name="cmd_rewind">Rewind</string>
+    <string name="cmd_record">Record</string>
+    <string name="cmd_red_colour">Red</string>
+    <string name="cmd_green_colour">Green</string>
+    <string name="cmd_yellow_colour">Yellow</string>
+    <string name="cmd_blue_colour">Blue</string>
+    <string name="cmd_subtitle">Subtitle</string>
+    <string name="cmd_teletext">Teletext</string>
+    <string name="cmd_digit_0">0</string>
+    <string name="cmd_digit_1">1</string>
+    <string name="cmd_digit_2">2</string>
+    <string name="cmd_digit_3">3</string>
+    <string name="cmd_digit_4">4</string>
+    <string name="cmd_digit_5">5</string>
+    <string name="cmd_digit_6">6</string>
+    <string name="cmd_digit_7">7</string>
+    <string name="cmd_digit_8">8</string>
+    <string name="cmd_digit_9">9</string>
+    <string name="cmd_ambilight_on_off">Ambilight On/Off</string>
 </resources>
