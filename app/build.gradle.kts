@@ -12,7 +12,7 @@ android {
         minSdk = 26
         targetSdk = 36
         versionCode = 1010003000
-        versionName = "1.3.0"
+        versionName = "1.3.0-mobile"
     }
 
     val ksPath = System.getenv("ANDROID_KEYSTORE_PATH")
