@@ -43,6 +43,7 @@ fun MobileApp() {
         val showSetup by vm.showSetup.collectAsState()
         val tvOnline by vm.tvOnline.collectAsState()
         val demoMode by vm.demoMode.collectAsState()
+        val customButtons by vm.customButtons.collectAsState()
         val context = LocalContext.current
 
         if (!bootstrapped) {
@@ -57,6 +58,8 @@ fun MobileApp() {
                     vm.openSetup()
                 },
                 onRemoteAction = { vm.onRemoteAction(it) },
+                customButtons = customButtons,
+                onCustomCommand = { vm.sendCustomCommand(it) },
                 tvOnline = null
             )
         } else when {
@@ -73,6 +76,8 @@ fun MobileApp() {
             else -> MobileRemoteScreen(
                 onOpenSettings = { vm.openSetup() },
                 onRemoteAction = { vm.onRemoteAction(it) },
+                customButtons = customButtons,
+                onCustomCommand = { vm.sendCustomCommand(it) },
                 tvOnline = tvOnline
             )
         }

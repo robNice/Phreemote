@@ -41,4 +41,5 @@
     <string name="pairing_wait_tv">Controleer je tv op de PIN-melding.</string>
     <string name="pairing_error">Koppelingsfout: %1$s</string>
     <string name="demo_mode_exited">Demomodus beëindigd</string>
+
 </resources>
