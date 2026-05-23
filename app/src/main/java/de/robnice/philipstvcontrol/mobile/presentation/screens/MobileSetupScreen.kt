@@ -110,8 +110,18 @@ private fun commandDisplayName(key: String): String = when (key) {
     "Digit7"         -> stringResource(R.string.cmd_digit_7)
     "Digit8"         -> stringResource(R.string.cmd_digit_8)
     "Digit9"         -> stringResource(R.string.cmd_digit_9)
-    "AmbilightOnOff" -> stringResource(R.string.cmd_ambilight_on_off)
-    else             -> key.toCommandDisplayName()
+    "AmbilightOnOff"        -> stringResource(R.string.cmd_ambilight_on_off)
+    "NetflixIntent"         -> stringResource(R.string.cmd_netflix_intent)
+    "AmazonIntent"          -> stringResource(R.string.cmd_amazon_intent)
+    "YoutubeIntent"         -> stringResource(R.string.cmd_youtube_intent)
+    "EpgIntent"             -> stringResource(R.string.cmd_epg_intent)
+    "LiveTvIntent"          -> stringResource(R.string.cmd_live_tv_intent)
+    "AndroidSettingsIntent" -> stringResource(R.string.cmd_android_settings_intent)
+    "Hdmi1Intent"           -> stringResource(R.string.cmd_hdmi1_intent)
+    "Hdmi2Intent"           -> stringResource(R.string.cmd_hdmi2_intent)
+    "Hdmi3Intent"           -> stringResource(R.string.cmd_hdmi3_intent)
+    "Hdmi4Intent"           -> stringResource(R.string.cmd_hdmi4_intent)
+    else                    -> key.toCommandDisplayName()
 }
 
 @Composable

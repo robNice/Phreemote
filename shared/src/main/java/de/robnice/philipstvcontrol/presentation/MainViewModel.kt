@@ -446,7 +446,12 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             try {
                 remoteMutex.lock()
                 try {
-                    val success = remoteService.sendKey(ip, pin, basePath, digestUser, digestPass, command)
+                    val intentJson = INTENT_COMMANDS[command]
+                    val success = if (intentJson != null) {
+                        remoteService.sendIntent(ip, pin, basePath, digestUser, digestPass, intentJson)
+                    } else {
+                        remoteService.sendKey(ip, pin, basePath, digestUser, digestPass, command)
+                    }
                     _tvOnline.value = success
                 } finally {
                     remoteMutex.unlock()
@@ -546,6 +551,21 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             RemoteAction.BLUE -> "BlueColour"
 
         }
+    }
+
+    companion object {
+        private val INTENT_COMMANDS = mapOf(
+            "NetflixIntent"          to """{"intent":{"action":"android.intent.action.MAIN","component":{"packageName":"com.netflix.ninja","className":"com.netflix.ninja.MainActivity"}}}""",
+            "AmazonIntent"           to """{"intent":{"action":"android.intent.action.MAIN","component":{"packageName":"com.amazon.amazonvideo.livingroom","className":"com.amazon.ignition.IgnitionActivity"}}}""",
+            "YoutubeIntent"          to """{"intent":{"action":"android.intent.action.MAIN","component":{"packageName":"com.google.android.youtube.tv","className":"com.google.android.youtube.tv.MainActivity"}}}""",
+            "EpgIntent"              to """{"intent":{"action":"android.intent.action.MAIN","component":{"packageName":"org.droidtv.channels","className":"org.droidtv.channels.ChannelsActivity"}}}""",
+            "LiveTvIntent"           to """{"intent":{"action":"android.intent.action.MAIN","component":{"packageName":"org.droidtv.channels","className":"org.droidtv.channels.ChannelsActivity"}}}""",
+            "AndroidSettingsIntent"  to """{"intent":{"action":"android.settings.SETTINGS"}}""",
+            "Hdmi1Intent"            to """{"intent":{"action":"org.droidtv.playtv.SELECTURI","extras":{"uri":"content://org.droidtv.playtv.provider.playtvdevicesprovider/devices/hdmi1"}}}""",
+            "Hdmi2Intent"            to """{"intent":{"action":"org.droidtv.playtv.SELECTURI","extras":{"uri":"content://org.droidtv.playtv.provider.playtvdevicesprovider/devices/hdmi2"}}}""",
+            "Hdmi3Intent"            to """{"intent":{"action":"org.droidtv.playtv.SELECTURI","extras":{"uri":"content://org.droidtv.playtv.provider.playtvdevicesprovider/devices/hdmi3"}}}""",
+            "Hdmi4Intent"            to """{"intent":{"action":"org.droidtv.playtv.SELECTURI","extras":{"uri":"content://org.droidtv.playtv.provider.playtvdevicesprovider/devices/hdmi4"}}}"""
+        )
     }
 
 }
