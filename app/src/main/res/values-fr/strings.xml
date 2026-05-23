@@ -77,4 +77,14 @@
     <string name="cmd_digit_8">8</string>
     <string name="cmd_digit_9">9</string>
     <string name="cmd_ambilight_on_off">Ambilight marche/arrêt</string>
+    <string name="cmd_netflix_intent">Netflix (Jointspace V6)</string>
+    <string name="cmd_amazon_intent">Amazon (Jointspace V6)</string>
+    <string name="cmd_youtube_intent">YouTube (Jointspace V6)</string>
+    <string name="cmd_epg_intent">EPG (Jointspace V6)</string>
+    <string name="cmd_live_tv_intent">Live TV (Jointspace V6)</string>
+    <string name="cmd_android_settings_intent">Android Settings (Jointspace V6)</string>
+    <string name="cmd_hdmi1_intent">HDMI 1 (Jointspace V6)</string>
+    <string name="cmd_hdmi2_intent">HDMI 2 (Jointspace V6)</string>
+    <string name="cmd_hdmi3_intent">HDMI 3 (Jointspace V6)</string>
+    <string name="cmd_hdmi4_intent">HDMI 4 (Jointspace V6)</string>
 </resources>

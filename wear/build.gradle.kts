@@ -15,8 +15,8 @@ android {
         applicationId = "de.robnice.philipstvcontrol"
         minSdk = 30
         targetSdk = 36
-        versionCode = 10003000
-        versionName = "1.3.0-wear"
+        versionCode = 10003001
+        versionName = "1.3.1-wear"
 
     }
 

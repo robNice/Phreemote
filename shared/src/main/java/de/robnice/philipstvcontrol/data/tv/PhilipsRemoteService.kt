@@ -86,4 +86,63 @@ class PhilipsRemoteService(
             doSend()
         }
     }
+
+    fun sendIntent(
+        ip: String,
+        tlsPinOrMarker: String,
+        basePath: String?,
+        digestUser: String,
+        digestPass: String,
+        intentJson: String
+    ): Boolean {
+
+        val cacheKey = "$ip|$digestUser|$digestPass"
+
+        val client = clientCache.getOrPut(cacheKey) {
+            okHttpFactory
+                .unsafeProbeClient()
+                .newBuilder()
+                .connectionPool(connectionPool)
+                .retryOnConnectionFailure(true)
+                .authenticator(DigestAuthenticator(digestUser, digestPass))
+                .build()
+        }
+
+        val normalizedBasePath = when {
+            basePath.isNullOrBlank() -> "/6"
+            basePath.startsWith("/") -> basePath
+            else -> "/$basePath"
+        }
+
+        val url = "https://$ip:1926$normalizedBasePath/activities/launch"
+
+        val body = intentJson.toRequestBody(jsonMediaType)
+
+        val request = Request.Builder()
+            .url(url)
+            .post(body)
+            .header("Connection", "keep-alive")
+            .build()
+
+        fun doSend(): Boolean {
+            client.newCall(request).execute().use { resp ->
+                val bodyStr = resp.body?.string().orEmpty()
+                android.util.Log.d(
+                    "TV",
+                    "activities/launch -> code=${resp.code} body=${bodyStr.take(120)}"
+                )
+                return resp.isSuccessful
+            }
+        }
+
+        return try {
+            doSend()
+        } catch (e: SSLHandshakeException) {
+            android.util.Log.d("TV", "activities/launch handshake failed, retrying once", e)
+            doSend()
+        } catch (e: EOFException) {
+            android.util.Log.d("TV", "activities/launch EOF, retrying once", e)
+            doSend()
+        }
+    }
 }
